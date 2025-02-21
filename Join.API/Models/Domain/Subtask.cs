@@ -9,7 +9,7 @@ namespace Join.API.Models.Domain
         public StatusChoices StatusChoices { get; set; }
 
         [ForeignKey("TaskId")]
-        public int TaskId { get; set; }
+        public Guid TaskId { get; set; }
         public Task Task { get; set; }
     }
 }
