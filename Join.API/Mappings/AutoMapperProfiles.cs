@@ -10,6 +10,8 @@ namespace Join.API.Mappings
         public AutoMapperProfiles()
         {
             CreateMap<TaskDTO, Task>().ReverseMap();
+            CreateMap<AddTaskRequestDTO, Task>().ReverseMap();
+            CreateMap<UpdateTaskRequestDTO, Task>().ReverseMap();
             CreateMap<SubtaskDTO, Subtask>().ReverseMap();
             CreateMap<ContactDTO, Contact>().ReverseMap();
         }
