@@ -1,4 +1,5 @@
 using Join.API.Data;
+using Join.API.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<JoinDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("JoinConnectionString")));
+
+builder.Services.AddScoped<ITaskRepository, SQLTaskRepository>();
+
+builder.Services.AddScoped<IContactRepository, SQLContactRepository>();
 
 var app = builder.Build();
 

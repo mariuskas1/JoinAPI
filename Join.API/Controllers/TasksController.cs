@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Join.API.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Join.API.Controllers
@@ -7,10 +8,17 @@ namespace Join.API.Controllers
     [ApiController]
     public class TasksController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult GetAll()
-        {
+        private readonly ITaskRepository taskRepository;
 
+        public TasksController(ITaskRepository taskRepository)
+        {
+            this.taskRepository = taskRepository;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var taskDomain = await taskRepository.GetAllAsync();
         }
     }
 }
