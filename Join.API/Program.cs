@@ -1,4 +1,5 @@
 using Join.API.Data;
+using Join.API.Mappings;
 using Join.API.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("JoinConnectionSt
 builder.Services.AddScoped<ITaskRepository, SQLTaskRepository>();
 
 builder.Services.AddScoped<IContactRepository, SQLContactRepository>();
+
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 var app = builder.Build();
 
