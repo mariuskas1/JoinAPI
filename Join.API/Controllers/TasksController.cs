@@ -56,6 +56,7 @@ namespace Join.API.Controllers
         }
 
         [HttpPut]
+        [Route("{id:Guid}")]
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateTaskRequestDTO updateTaskRequestDTO)
         {
             var taskDomainModel = mapper.Map<Task>(updateTaskRequestDTO);
