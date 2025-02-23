@@ -6,7 +6,7 @@ namespace Join.API.Models.Domain
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
-        public StatusChoices StatusChoices { get; set; }
+        public StatusChoices Status { get; set; }
 
         [ForeignKey("TaskId")]
         public Guid TaskId { get; set; }

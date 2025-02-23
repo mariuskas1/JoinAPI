@@ -19,6 +19,8 @@ builder.Services.AddScoped<ITaskRepository, SQLTaskRepository>();
 
 builder.Services.AddScoped<IContactRepository, SQLContactRepository>();
 
+builder.Services.AddScoped<ISubtaskRepository, SQLSubtaskRepository>();
+
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 var app = builder.Build();
