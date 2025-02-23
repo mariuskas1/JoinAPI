@@ -7,7 +7,7 @@ namespace Join.API.Data
 {
     public class JoinDbContext : DbContext
     {
-        public JoinDbContext(DbContextOptions dbContextOptions): base(dbContextOptions) 
+        public JoinDbContext(DbContextOptions<JoinDbContext> dbContextOptions): base(dbContextOptions) 
         {
             
         }
