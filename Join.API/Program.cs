@@ -28,6 +28,8 @@ builder.Services.AddScoped<IContactRepository, SQLContactRepository>();
 
 builder.Services.AddScoped<ISubtaskRepository, SQLSubtaskRepository>();
 
+builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 builder.Services.AddIdentityCore<IdentityUser>()
