@@ -14,6 +14,8 @@ namespace Join.API.Mappings
             CreateMap<UpdateTaskRequestDTO, Task>().ReverseMap();
             CreateMap<SubtaskDTO, Subtask>().ReverseMap();
             CreateMap<ContactDTO, Contact>().ReverseMap();
+            CreateMap<AddContactRequestDTO, Contact>().ReverseMap();
+            CreateMap<UpdateContactRequestDTO, Contact>().ReverseMap();
         }
     }
 }
